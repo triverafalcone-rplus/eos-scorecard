@@ -175,6 +175,7 @@
     function formatValue(val) {
       if (val === null) return "—";
       if (typeof val === "number" && val > 100) return val.toLocaleString();
+      if (typeof val === "number" && val % 1 !== 0) return val.toFixed(1);
       return val.toString();
     }
 
@@ -186,7 +187,7 @@
         ${data.map((v, i) => {
           const status = getStatus(v, goalNum);
           const isCurrent = i === 0 ? 'current-week' : '';
-          const display = v === null ? '—' : (typeof v === 'number' && v > 100 ? v.toLocaleString() : v.toString());
+          const display = formatValue(v);
           return `<td class="data-cell ${status} ${isCurrent}">${display}</td>`;
         }).join('')}
       </tr>`;
