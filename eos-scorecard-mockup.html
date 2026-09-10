@@ -160,7 +160,8 @@
       leads_gen: [null, null, 12, 25, 2, null, 23, 8, 9, 12, 43, 11, null],
       ctr: [null, null, 3.83, 7.83, 5.14, null, 5.13, 5.18, 7.04, 4.20, 4.86, 5.83, null],
       web_sessions: [null, null, 2973, 2996, 3000, null, 3080, 3138, 3257, 3180, 3086, null, null],
-      ticket_resp: [null, 100, 100, 100, 100, null, 90, 95, 90, null, 90, null, null]
+      ticket_resp: [null, 100, 100, 100, 100, null, 90, 95, 90, null, 90, null, null],
+      enps: [9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]
     };
 
     function getStatus(actual, goal) {
@@ -217,7 +218,7 @@
       ${renderRow('Top 200 At-Risk No-PO', '0', [null, null, null, null, null, null, null, null, null, null, null, null, null], 1)}
 
       <tr><td colspan="16" class="dept-row dept-people">People Operations — Tanya</td></tr>
-      ${renderRow('eNPS This Quarter', '50', [null, null, null, null, null, null, null, null, null, null, null, null, null], 50)}
+      ${renderRow('eNPS This Quarter', '50', METRICS.enps, 50)}
 
       <tr><td colspan="16" class="dept-row dept-tech">Technology — Matt</td></tr>
       ${renderRow('Ticket Response Rate %', '100%', METRICS.ticket_resp, 100)}
