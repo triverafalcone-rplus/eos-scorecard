@@ -3,561 +3,656 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R+ EOS Scorecard | Sep 5, 2026</title>
+  <title>R+ EOS Scorecard</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      background: #f8f8f8;
+    
+    :root {
+      --primary-green: #BBD646;
+      --primary-purple: #8B578C;
+      --primary-teal: #1CB4C6;
+      --primary-orange: #F68A3D;
+      --primary-coral: #ED697C;
+      --primary-blue: #4A90E2;
+      --text-dark: #1a1a1a;
+      --text-muted: #666666;
+      --text-light: #999999;
+      --border-light: #e0e0e0;
+      --bg-light: #f9f9f9;
+      --bg-white: #ffffff;
+      --green-status: #10b981;
+      --yellow-status: #f59e0b;
+      --red-status: #ef4444;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
       padding: 2rem;
-      color: #333;
     }
+    
     .header {
-      text-align: center;
-      margin-bottom: 2rem;
-      print-color-adjust: exact;
-    }
-    .header h1 {
-      font-size: 24px;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-      color: #1a1a1a;
-    }
-    .header p {
-      font-size: 13px;
-      color: #666;
-    }
-    .scorecard {
-      background: white;
-      border: 0.5px solid #e0e0e0;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-      overflow: hidden;
-      page-break-inside: avoid;
-      print-color-adjust: exact;
-    }
-    .scorecard-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-    }
-    .scorecard-table th, .scorecard-table td {
-      padding: 10px 8px;
-      text-align: left;
-      border-right: 0.5px solid #e0e0e0;
-    }
-    .scorecard-table th {
-      background: #f5f5f5;
-      font-weight: 500;
-      border-bottom: 0.5px solid #e0e0e0;
-      white-space: nowrap;
-    }
-    .scorecard-table td {
-      border-bottom: 0.5px solid #f0f0f0;
-      vertical-align: middle;
-    }
-    .dept-header {
-      font-weight: 600;
-      padding: 12px 8px !important;
-      color: white !important;
-      background-color: #333 !important;
-    }
-    .dept-sales { background: #BBD646 !important; }
-    .dept-marketing { background: #8B578C !important; }
-    .dept-services { background: #1CB4C6 !important; }
-    .dept-product { background: #F68A3D !important; }
-    .dept-ops { background: #ED697C !important; }
-    .metric-name {
-      font-weight: 500;
-      padding-left: 12px !important;
-      background: #fafafa;
-      min-width: 160px;
-    }
-    .goal-cell {
-      font-weight: 500;
-      background: #f5f5f5;
-      min-width: 40px;
-      text-align: center;
-    }
-    .data-cell {
-      width: 50px;
-      text-align: center;
-      font-weight: 500;
-      padding: 8px 4px !important;
-      font-size: 12px;
-      min-width: 50px;
-    }
-    .current-week { 
-      border-left: 3px solid #F68A3D !important;
-      border-right: 3px solid #F68A3D !important;
-      background: rgba(246, 138, 61, 0.04) !important;
-    }
-    .current-week-header {
-      background: rgba(246, 138, 61, 0.08) !important;
-      border-left: 3px solid #F68A3D !important;
-      border-right: 3px solid #F68A3D !important;
-    }
-    .green { background: #d4f4dd; color: #1a5c39; }
-    .yellow { background: #fff4d6; color: #8b6914; }
-    .red { background: #fde4e4; color: #8b2c2c; }
-    .empty { background: #f5f5f5; color: #999; }
-    .inverse.green { background: #fde4e4; color: #8b2c2c; }
-    .inverse.yellow { background: #fff4d6; color: #8b6914; }
-    .inverse.red { background: #d4f4dd; color: #1a5c39; }
-    .week-header {
-      writing-mode: horizontal-tb;
-      font-size: 11px;
-      font-weight: 500;
-      text-align: center;
-      padding: 6px 2px !important;
-    }
-    .open-seat {
-      font-style: italic;
-      opacity: 0.7;
-    }
-    .legend {
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border-light);
+      padding: 2rem 2rem 1.5rem;
+      margin: -2rem -2rem 2rem -2rem;
       display: flex;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 1.5rem;
-      font-size: 12px;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
-    .legend-item {
+    
+    .header-content h1 {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-content p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    
+    .week-selector {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1rem;
     }
-    .legend-box {
-      width: 24px;
-      height: 16px;
-      border-radius: 3px;
+    
+    .week-selector label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
-    @media print {
-      body { background: white; padding: 0; }
-      .scorecard { box-shadow: none; border: 1px solid #999; page-break-inside: avoid; }
-      .header { break-after: avoid; }
-      .legend { break-before: avoid; margin-top: 1rem; }
+    
+    .week-selector select {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-light);
+      border-radius: 6px;
+      font-size: 14px;
+      background: var(--bg-white);
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    .scroll-hint {
-      text-align: center;
-      font-size: 11px;
-      color: #999;
-      margin-top: 1rem;
+    
+    .week-selector select:hover {
+      border-color: var(--text-muted);
+    }
+    
+    .week-selector select:focus {
+      outline: none;
+      border-color: var(--primary-blue);
+      box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+    }
+    
+    .department {
+      margin-bottom: 3rem;
+    }
+    
+    .department-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid;
+    }
+    
+    .department-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+      font-weight: 600;
+    }
+    
+    .dept-sales .department-icon { background: var(--primary-green); }
+    .dept-marketing .department-icon { background: var(--primary-purple); }
+    .dept-services .department-icon { background: var(--primary-teal); }
+    .dept-product .department-icon { background: var(--primary-orange); }
+    .dept-people .department-icon { background: var(--primary-coral); }
+    .dept-tech .department-icon { background: var(--primary-blue); }
+    .dept-ops .department-icon { background: #666666; }
+    
+    .dept-sales { border-bottom-color: var(--primary-green); }
+    .dept-marketing { border-bottom-color: var(--primary-purple); }
+    .dept-services { border-bottom-color: var(--primary-teal); }
+    .dept-product { border-bottom-color: var(--primary-orange); }
+    .dept-people { border-bottom-color: var(--primary-coral); }
+    .dept-tech { border-bottom-color: var(--primary-blue); }
+    .dept-ops { border-bottom-color: #666666; }
+    
+    .department-title h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+    
+    .department-title p {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+    
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+    }
+    
+    .metric-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border-light);
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+    
+    .metric-card:hover {
+      border-color: var(--text-light);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .metric-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 0.75rem;
+    }
+    
+    .metric-values {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .metric-actual {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    
+    .metric-goal {
+      font-size: 12px;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+    
+    .metric-goal span {
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 1rem;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    
+    .status-green { color: var(--green-status); }
+    .status-green .status-dot { background: var(--green-status); }
+    
+    .status-yellow { color: var(--yellow-status); }
+    .status-yellow .status-dot { background: var(--yellow-status); }
+    
+    .status-red { color: var(--red-status); }
+    .status-red .status-dot { background: var(--red-status); }
+    
+    .trend-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 30px;
+    }
+    
+    .trend-bar {
+      flex: 1;
+      background: var(--bg-light);
+      border-radius: 2px;
+      min-width: 4px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    
+    .trend-bar:hover {
+      opacity: 0.8;
+    }
+    
+    .trend-bar.bar-green { background: var(--green-status); }
+    .trend-bar.bar-yellow { background: var(--yellow-status); }
+    .trend-bar.bar-red { background: var(--red-status); }
+    .trend-bar.empty { background: var(--border-light); }
+    
+    .empty-metric {
+      color: var(--text-light);
+      font-size: 14px;
       font-style: italic;
     }
-    .scroll-container {
-      overflow-x: auto;
-      margin-top: 0;
+    
+    .footer {
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border-light);
+      margin-top: 3rem;
+      font-size: 12px;
+      color: var(--text-light);
+    }
+    
+    .footer a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: flex-start;
+      }
+      
+      .week-selector {
+        width: 100%;
+      }
+      
+      .week-selector select {
+        flex: 1;
+      }
+      
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>Redemption Plus — EOS Scorecard</h1>
-    <p>Week ending September 5, 2026 | 13-week rolling view</p>
-  </div>
-
-  <div class="scroll-container">
-    <table class="scorecard-table">
-      <thead>
-        <tr>
-          <th style="min-width: 160px;">WHO / MEASURABLE</th>
-          <th class="goal-cell">GOAL</th>
-          <th class="week-header current-week-header">Sep 5</th>
-          <th class="week-header">Aug 29</th>
-          <th class="week-header">Aug 22</th>
-          <th class="week-header">Aug 15</th>
-          <th class="week-header">Aug 8</th>
-          <th class="week-header">Aug 1</th>
-          <th class="week-header">Jul 25</th>
-          <th class="week-header">Jul 18</th>
-          <th class="week-header">Jul 11</th>
-          <th class="week-header">Jul 4</th>
-          <th class="week-header">Jun 27</th>
-          <th class="week-header">Jun 20</th>
-          <th class="week-header">Jun 13</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- SALES (OPEN SEAT) -->
-        <tr>
-          <td class="dept-header dept-sales" colspan="15">Sales <span class="open-seat">(Open)</span></td>
-        </tr>
-        <tr>
-          <td class="metric-name">Connections Last Week</td>
-          <td class="goal-cell">450</td>
-          <td class="data-cell current-week green">1,274</td>
-          <td class="data-cell green">1,229</td>
-          <td class="data-cell green">1,613</td>
-          <td class="data-cell green">28,420</td>
-          <td class="data-cell green">679</td>
-          <td class="data-cell green">659</td>
-          <td class="data-cell green">662</td>
-          <td class="data-cell green">743</td>
-          <td class="data-cell green">703</td>
-          <td class="data-cell green">454</td>
-          <td class="data-cell green">564</td>
-          <td class="data-cell green">687</td>
-          <td class="data-cell green">646</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Discovery Calls (CGOTBA)</td>
-          <td class="goal-cell">10</td>
-          <td class="data-cell current-week red">2</td>
-          <td class="data-cell red">5</td>
-          <td class="data-cell red">4</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">6</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">0</td>
-          <td class="data-cell red">0</td>
-          <td class="data-cell red">0</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">1</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Leads Qualified</td>
-          <td class="goal-cell">20</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">% Down Accounts Not Contacted</td>
-          <td class="goal-cell">0%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell inverse red">47.6%</td>
-          <td class="data-cell inverse red">47.6%</td>
-          <td class="data-cell inverse red">47.8%</td>
-          <td class="data-cell inverse red">47.4%</td>
-          <td class="data-cell inverse red empty">—</td>
-          <td class="data-cell inverse red">47.7%</td>
-          <td class="data-cell inverse red">47.6%</td>
-          <td class="data-cell inverse yellow">44.3%</td>
-          <td class="data-cell inverse yellow">42.9%</td>
-          <td class="data-cell inverse red">41.9%</td>
-          <td class="data-cell inverse yellow">38.1%</td>
-          <td class="data-cell inverse red empty">—</td>
-        </tr>
-
-        <!-- MARKETING -->
-        <tr>
-          <td class="dept-header dept-marketing" colspan="15">Marketing (Steph)</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Leads Generated</td>
-          <td class="goal-cell">8</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">12</td>
-          <td class="data-cell green">25</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">23</td>
-          <td class="data-cell green">8</td>
-          <td class="data-cell green">9</td>
-          <td class="data-cell green">12</td>
-          <td class="data-cell green">43</td>
-          <td class="data-cell green">11</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Click Through Rate (%)</td>
-          <td class="goal-cell">2%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">3.83</td>
-          <td class="data-cell green">7.83</td>
-          <td class="data-cell green">5.14</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">5.13</td>
-          <td class="data-cell green">5.18</td>
-          <td class="data-cell green">7.04</td>
-          <td class="data-cell green">4.20</td>
-          <td class="data-cell green">4.86</td>
-          <td class="data-cell green">5.83</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Website Sessions</td>
-          <td class="goal-cell">2,500</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">2,973</td>
-          <td class="data-cell green">2,996</td>
-          <td class="data-cell green">3,000</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">3,080</td>
-          <td class="data-cell green">3,138</td>
-          <td class="data-cell green">3,257</td>
-          <td class="data-cell green">3,180</td>
-          <td class="data-cell green">3,086</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">NPS Score (Customer)</td>
-          <td class="goal-cell">75</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- SERVICES -->
-        <tr>
-          <td class="dept-header dept-services" colspan="15">Services (Megan)</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Merchandise Project Avg Hours</td>
-          <td class="goal-cell">4</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Onsite Feedback L365 Avg</td>
-          <td class="goal-cell">25.5</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Cranes & Merchandisers Avg Hours</td>
-          <td class="goal-cell">4</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Refresh Time Tracking Hours</td>
-          <td class="goal-cell">8</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- PRODUCT -->
-        <tr>
-          <td class="dept-header dept-product" colspan="15">Product (Anthony)</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Package Design Update Penetration (%)</td>
-          <td class="goal-cell">50%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Product Design Update Penetration (%)</td>
-          <td class="goal-cell">80%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Top 200 Out of Stock</td>
-          <td class="goal-cell">0</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Top 200 At-Risk No PO</td>
-          <td class="goal-cell">0</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- PEOPLE OPERATIONS -->
-        <tr>
-          <td class="dept-header dept-ops" colspan="15">People Operations (Tanya)</td>
-        </tr>
-        <tr>
-          <td class="metric-name">eNPS This Quarter</td>
-          <td class="goal-cell">50</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- TECHNOLOGY -->
-        <tr>
-          <td class="dept-header" style="background: #4A90E2 !important;" colspan="15">Technology (Matt)</td>
-        </tr>
-        <tr>
-          <td class="metric-name">Ticket Response Rate (%)</td>
-          <td class="goal-cell">100</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">90</td>
-          <td class="data-cell yellow">95</td>
-          <td class="data-cell yellow">90</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">90</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- OPERATIONS -->
-        <tr>
-          <td class="dept-header dept-ops" colspan="15">Operations</td>
-        </tr>
-        <tr>
-          <td class="metric-name">19K Order Tracker (YoY)</td>
-          <td class="goal-cell">19,000</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="legend">
-    <div class="legend-item">
-      <div class="legend-box green"></div>
-      <span>On track: ≥90% of goal</span>
+    <div class="header-content">
+      <h1>EOS Scorecard</h1>
+      <p>Weekly performance tracking across departments</p>
     </div>
-    <div class="legend-item">
-      <div class="legend-box yellow"></div>
-      <span>At risk: 70–89% of goal</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-box red"></div>
-      <span>Off track: <70% of goal</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-box" style="background: #f5f5f5; border: 0.5px solid #ddd;"></div>
-      <span>Data not yet tracked</span>
+    <div class="week-selector">
+      <label for="week-select">Week ending:</label>
+      <select id="week-select">
+        <option value="0">Sep 5, 2026</option>
+        <option value="1">Aug 29, 2026</option>
+      </select>
     </div>
   </div>
-  <p class="scroll-hint">⤳ Scroll right to see additional weeks</p>
+
+  <div class="container">
+    <div class="department dept-sales">
+      <div class="department-header">
+        <div class="department-icon">📊</div>
+        <div class="department-title">
+          <h2>Sales</h2>
+          <p>Open — Lead scoring and pipeline</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">Connections Last Week</div>
+          <div class="metric-values">
+            <span class="metric-actual" id="conn-actual">1,274</span>
+            <div class="metric-goal">of <span>450</span></div>
+          </div>
+          <div class="status-indicator status-green">
+            <span class="status-dot"></span> 283% of goal
+          </div>
+          <div class="trend-chart" id="conn-trend"></div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">CGOTBA Discovery Calls</div>
+          <div class="metric-values">
+            <span class="metric-actual" id="cgotba-actual">2</span>
+            <div class="metric-goal">of <span>10</span></div>
+          </div>
+          <div class="status-indicator status-red">
+            <span class="status-dot"></span> 20% of goal
+          </div>
+          <div class="trend-chart" id="cgotba-trend"></div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Leads Qualified</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">of <span>20</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> No data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Down Accounts</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>0%</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> No data
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department dept-marketing">
+      <div class="department-header">
+        <div class="department-icon">📢</div>
+        <div class="department-title">
+          <h2>Marketing</h2>
+          <p>Steph — Brand awareness and lead generation</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">Leads Generated</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>8</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> No data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Click-Through Rate</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>2%</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> No data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Website Sessions</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>2,500</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> No data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">NPS Score</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>75</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> No data
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department dept-services">
+      <div class="department-header">
+        <div class="department-icon">🛠️</div>
+        <div class="department-title">
+          <h2>Services</h2>
+          <p>Megan — Project delivery and customer satisfaction</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">Merch Project Avg Hours</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>4h</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Sparse data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Onsite Feedback (L365)</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>25.5</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Sparse data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Cranes Avg Hours</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>4h</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Sparse data
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Refresh Time Hours</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>8h</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Sparse data
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department dept-product">
+      <div class="department-header">
+        <div class="department-icon">🎯</div>
+        <div class="department-title">
+          <h2>Product</h2>
+          <p>Anthony — Inventory and design updates</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">Package Design %</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>50%</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Not tracked
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Product Design %</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>80%</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Not tracked
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">Top 200 OOS</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>0</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Point-in-time
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-name">At-Risk No-PO</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>0</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Point-in-time
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department dept-people">
+      <div class="department-header">
+        <div class="department-icon">👥</div>
+        <div class="department-title">
+          <h2>People Operations</h2>
+          <p>Tanya — Employee engagement and culture</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">eNPS This Quarter</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>50</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> Quarterly
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department dept-tech">
+      <div class="department-header">
+        <div class="department-icon">💻</div>
+        <div class="department-title">
+          <h2>Technology</h2>
+          <p>Matt — Systems and platform reliability</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">Ticket Response Rate</div>
+          <div class="metric-values">
+            <span class="metric-actual" id="ticket-actual">100</span>
+            <div class="metric-goal">%</div>
+          </div>
+          <div class="status-indicator status-green">
+            <span class="status-dot"></span> On target
+          </div>
+          <div class="trend-chart" id="ticket-trend"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="department dept-ops">
+      <div class="department-header">
+        <div class="department-icon">📦</div>
+        <div class="department-title">
+          <h2>Operations</h2>
+          <p>Order fulfillment and logistics</p>
+        </div>
+      </div>
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-name">19K Order Tracker (YoY)</div>
+          <div class="metric-values">
+            <span class="metric-actual empty-metric">—</span>
+            <div class="metric-goal">Goal: <span>19,000</span></div>
+          </div>
+          <div class="status-indicator" style="color: var(--text-light);">
+            <span class="status-dot" style="background: var(--text-light);"></span> YTD metric
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Next sync: Monday 7 AM ET | Powered by Salesforce | <a href="#" onclick="location.reload(); return false;">Refresh data</a></p>
+  </div>
+
+  <script>
+    const data = {
+      weeks: [
+        {
+          conn: [1274, 1229, 1613, 28420, 679, 659, 662, 743, 703, 454, 564, 687, 646],
+          cgotba: [2, 5, 4, 2, 6, 2, 2, 2, 0, 0, 0, 2, 1],
+          ticket: [null, 100, 100, 100, 100, null, 90, 95, 90, null, 90, null, null]
+        },
+        {
+          conn: [1229, 1613, 28420, 679, 659, 662, 743, 703, 454, 564, 687, 646, 500],
+          cgotba: [5, 4, 2, 6, 2, 2, 2, 0, 0, 0, 2, 1, 3],
+          ticket: [100, 100, 100, 100, null, 90, 95, 90, null, 90, null, null, 85]
+        }
+      ]
+    };
+
+    function renderTrend(elementId, dataArray) {
+      const element = document.getElementById(elementId);
+      if (!element) return;
+      
+      const nonEmpty = dataArray.filter(v => v !== null);
+      const max = Math.max(...nonEmpty);
+      
+      element.innerHTML = dataArray.map(v => {
+        if (v === null) return '<div class="trend-bar empty"></div>';
+        const pct = (v / max) * 100;
+        const status = pct >= 90 ? 'bar-green' : pct >= 70 ? 'bar-yellow' : 'bar-red';
+        return `<div class="trend-bar ${status}" style="height: ${Math.max(20, pct)}%;"></div>`;
+      }).join('');
+    }
+
+    function loadWeek(index) {
+      const week = data.weeks[index];
+      document.getElementById('conn-actual').textContent = week.conn[0].toLocaleString();
+      document.getElementById('cgotba-actual').textContent = week.cgotba[0];
+      document.getElementById('ticket-actual').textContent = week.ticket[0] || '—';
+      
+      renderTrend('conn-trend', week.conn);
+      renderTrend('cgotba-trend', week.cgotba);
+      renderTrend('ticket-trend', week.ticket);
+    }
+
+    document.getElementById('week-select').addEventListener('change', (e) => {
+      loadWeek(parseInt(e.target.value));
+    });
+
+    loadWeek(0);
+  </script>
 </body>
 </html>
