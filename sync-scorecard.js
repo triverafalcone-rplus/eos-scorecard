@@ -221,12 +221,19 @@ async function fetchWeekMetrics(weekStart, weekEnd) {
     const ticketResult = await query(
       `SELECT Actual__c FROM KPI__c WHERE Type__c = 'TicketResponseRate' AND Start_Date__c >= ${weekStart} AND Start_Date__c <= ${weekEnd} ORDER BY Start_Date__c DESC LIMIT 1`
     );
-    metrics.Operations['Ticket Response Rate'] = {
+    // People Operations metrics
+    metrics.People_Operations = metrics.People_Operations || {};
+    metrics.People_Operations['eNPS This Quarter'] = { actual: null, goal: 50 };
+
+    // Technology metrics
+    metrics.Technology = metrics.Technology || {};
+    metrics.Technology['Ticket Response Rate'] = {
       actual: ticketResult.records && ticketResult.records[0] ? parseFloat(ticketResult.records[0].Actual__c) : null,
       goal: 100
     };
 
-    metrics.Operations['eNPS This Quarter'] = { actual: null, goal: 50 };
+    // Operations metrics
+    metrics.Operations = metrics.Operations || {};
     metrics.Operations['19K Order Tracker YoY'] = { actual: null, goal: 19000 };
 
   } catch (error) {

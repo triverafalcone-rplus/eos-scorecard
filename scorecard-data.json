@@ -2,7 +2,7 @@
   "metadata": {
     "current_week": "2026-09-05",
     "current_week_sales_seat": "OPEN",
-    "note": "21 metrics (19 tracked + 2 placeholders) across 5 departments. CGOTBA uses Account.CGOTBA_Date__c."
+    "note": "21 metrics across 6 departments. CGOTBA uses Account.CGOTBA_Date__c. Ticket Response moved to Technology (Matt). eNPS moved to People Operations (Tanya)."
   },
   "weeks": [
     {
@@ -32,9 +32,13 @@
         "Top 200 OOS": { "actual": null, "goal": 0 },
         "Top 200 At-Risk No-PO": { "actual": null, "goal": 0 }
       },
+      "People_Operations": {
+        "eNPS This Quarter": { "actual": null, "goal": 50 }
+      },
+      "Technology": {
+        "Ticket Response Rate": { "actual": null, "goal": 100 }
+      },
       "Operations": {
-        "Ticket Response Rate": { "actual": null, "goal": 100 },
-        "eNPS This Quarter": { "actual": null, "goal": 50 },
         "19K Order Tracker YoY": { "actual": null, "goal": 19000 }
       }
     },
@@ -65,9 +69,13 @@
         "Top 200 OOS": { "actual": null, "goal": 0 },
         "Top 200 At-Risk No-PO": { "actual": null, "goal": 0 }
       },
+      "People_Operations": {
+        "eNPS This Quarter": { "actual": null, "goal": 50 }
+      },
+      "Technology": {
+        "Ticket Response Rate": { "actual": 100, "goal": 100 }
+      },
       "Operations": {
-        "Ticket Response Rate": { "actual": 100, "goal": 100 },
-        "eNPS This Quarter": { "actual": null, "goal": 50 },
         "19K Order Tracker YoY": { "actual": null, "goal": 19000 }
       }
     }
