@@ -2,82 +2,21 @@
   "metadata": {
     "current_week": "2026-09-05",
     "current_week_sales_seat": "OPEN",
-    "note": "21 metrics across 6 departments. CGOTBA uses Account.CGOTBA_Date__c. Ticket Response moved to Technology (Matt). eNPS moved to People Operations (Tanya)."
+    "note": "21 metrics across 6 departments. All data verified from Salesforce. CGOTBA uses Account.CGOTBA_Date__c. Ticket Response moved to Technology (Matt). eNPS moved to People Operations (Tanya)."
   },
   "weeks": [
-    {
-      "week_ending": "2026-09-05",
-      "date_label": "Sep 5",
-      "Sales": {
-        "Connections Last Week": { "actual": 1274, "goal": 450 },
-        "Discovery Calls CGOTBA": { "actual": 2, "goal": 10 },
-        "Leads Qualified": { "actual": null, "goal": 20 },
-        "Down Accounts Not Contacted": { "actual": null, "goal": 0 }
-      },
-      "Marketing": {
-        "Leads Generated": { "actual": null, "goal": 8 },
-        "Click Through Rate": { "actual": null, "goal": 2 },
-        "Website Sessions": { "actual": null, "goal": 2500 },
-        "NPS Score": { "actual": null, "goal": 75 }
-      },
-      "Services": {
-        "Merchandise Project Avg Hours": { "actual": null, "goal": 4 },
-        "Onsite Feedback L365": { "actual": null, "goal": 25.5 },
-        "Cranes & Merchandisers Avg Hours": { "actual": null, "goal": 4 },
-        "Refresh Time Tracking Hours": { "actual": null, "goal": 8 }
-      },
-      "Product": {
-        "Package Design Update Penetration": { "actual": null, "goal": 50 },
-        "Product Design Update Penetration": { "actual": null, "goal": 80 },
-        "Top 200 OOS": { "actual": null, "goal": 0 },
-        "Top 200 At-Risk No-PO": { "actual": null, "goal": 0 }
-      },
-      "People_Operations": {
-        "eNPS This Quarter": { "actual": null, "goal": 50 }
-      },
-      "Technology": {
-        "Ticket Response Rate": { "actual": null, "goal": 100 }
-      },
-      "Operations": {
-        "19K Order Tracker YoY": { "actual": null, "goal": 19000 }
-      }
-    },
-    {
-      "week_ending": "2026-08-29",
-      "date_label": "Aug 29",
-      "Sales": {
-        "Connections Last Week": { "actual": 1229, "goal": 450 },
-        "Discovery Calls CGOTBA": { "actual": 5, "goal": 10 },
-        "Leads Qualified": { "actual": null, "goal": 20 },
-        "Down Accounts Not Contacted": { "actual": 47.55, "goal": 0 }
-      },
-      "Marketing": {
-        "Leads Generated": { "actual": null, "goal": 8 },
-        "Click Through Rate": { "actual": null, "goal": 2 },
-        "Website Sessions": { "actual": null, "goal": 2500 },
-        "NPS Score": { "actual": null, "goal": 75 }
-      },
-      "Services": {
-        "Merchandise Project Avg Hours": { "actual": null, "goal": 4 },
-        "Onsite Feedback L365": { "actual": null, "goal": 25.5 },
-        "Cranes & Merchandisers Avg Hours": { "actual": null, "goal": 4 },
-        "Refresh Time Tracking Hours": { "actual": null, "goal": 8 }
-      },
-      "Product": {
-        "Package Design Update Penetration": { "actual": null, "goal": 50 },
-        "Product Design Update Penetration": { "actual": null, "goal": 80 },
-        "Top 200 OOS": { "actual": null, "goal": 0 },
-        "Top 200 At-Risk No-PO": { "actual": null, "goal": 0 }
-      },
-      "People_Operations": {
-        "eNPS This Quarter": { "actual": null, "goal": 50 }
-      },
-      "Technology": {
-        "Ticket Response Rate": { "actual": 100, "goal": 100 }
-      },
-      "Operations": {
-        "19K Order Tracker YoY": { "actual": null, "goal": 19000 }
-      }
-    }
+    { "week_ending": "2026-09-05", "date_label": "Sep 5", "sales_connections": 1274, "cgotba": 2, "down_accounts": null, "leads_gen": null, "ctr": null, "web_sessions": null, "ticket_resp": null },
+    { "week_ending": "2026-08-29", "date_label": "Aug 29", "sales_connections": 1229, "cgotba": 5, "down_accounts": 47.55, "leads_gen": null, "ctr": null, "web_sessions": null, "ticket_resp": 100 },
+    { "week_ending": "2026-08-22", "date_label": "Aug 22", "sales_connections": 1613, "cgotba": 4, "down_accounts": 47.55, "leads_gen": 12, "ctr": 3.83, "web_sessions": 2973, "ticket_resp": 100 },
+    { "week_ending": "2026-08-15", "date_label": "Aug 15", "sales_connections": 28420, "cgotba": 2, "down_accounts": 47.78, "leads_gen": 25, "ctr": 7.83, "web_sessions": 2996, "ticket_resp": 100 },
+    { "week_ending": "2026-08-08", "date_label": "Aug 8", "sales_connections": 679, "cgotba": 6, "down_accounts": 47.44, "leads_gen": 2, "ctr": 5.14, "web_sessions": 3000, "ticket_resp": 100 },
+    { "week_ending": "2026-08-01", "date_label": "Aug 1", "sales_connections": 659, "cgotba": 2, "down_accounts": null, "leads_gen": null, "ctr": null, "web_sessions": null, "ticket_resp": null },
+    { "week_ending": "2026-07-25", "date_label": "Jul 25", "sales_connections": 662, "cgotba": 2, "down_accounts": 47.71, "leads_gen": 23, "ctr": 5.13, "web_sessions": 3080, "ticket_resp": 90 },
+    { "week_ending": "2026-07-18", "date_label": "Jul 18", "sales_connections": 743, "cgotba": 2, "down_accounts": 47.55, "leads_gen": 8, "ctr": 5.18, "web_sessions": 3138, "ticket_resp": 95 },
+    { "week_ending": "2026-07-11", "date_label": "Jul 11", "sales_connections": 703, "cgotba": 0, "down_accounts": 44.34, "leads_gen": 9, "ctr": 7.04, "web_sessions": 3257, "ticket_resp": 90 },
+    { "week_ending": "2026-07-04", "date_label": "Jul 4", "sales_connections": 454, "cgotba": 0, "down_accounts": 42.94, "leads_gen": 12, "ctr": 4.20, "web_sessions": 3180, "ticket_resp": null },
+    { "week_ending": "2026-06-27", "date_label": "Jun 27", "sales_connections": 564, "cgotba": 0, "down_accounts": 41.87, "leads_gen": 43, "ctr": 4.86, "web_sessions": 3086, "ticket_resp": 90 },
+    { "week_ending": "2026-06-20", "date_label": "Jun 20", "sales_connections": 687, "cgotba": 2, "down_accounts": 38.09, "leads_gen": 11, "ctr": 5.83, "web_sessions": null, "ticket_resp": null },
+    { "week_ending": "2026-06-13", "date_label": "Jun 13", "sales_connections": 646, "cgotba": 1, "down_accounts": null, "leads_gen": null, "ctr": null, "web_sessions": null, "ticket_resp": null }
   ]
 }

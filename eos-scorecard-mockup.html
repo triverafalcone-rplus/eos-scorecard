@@ -240,13 +240,6 @@
     .legend-green { background: #ecfdf5; border: 1px solid var(--green-status); }
     .legend-yellow { background: #fffbeb; border: 1px solid var(--yellow-status); }
     .legend-red { background: #fef2f2; border: 1px solid var(--red-status); }
-    
-    @media print {
-      body { padding: 0; }
-      .header, .week-selector, .footer, .legend { display: none; }
-      .scorecard-wrapper { box-shadow: none; }
-      table { font-size: 10px; }
-    }
   </style>
 </head>
 <body>
@@ -256,10 +249,21 @@
       <p>Redemption Plus — Week Ending <span id="current-week">Sep 5, 2026</span></p>
     </div>
     <div class="week-selector">
-      <label for="week-select">Week:</label>
+      <label for="week-select">View week:</label>
       <select id="week-select">
-        <option value="0">Sep 5</option>
+        <option value="0">Sep 5 (current)</option>
         <option value="1">Aug 29</option>
+        <option value="2">Aug 22</option>
+        <option value="3">Aug 15</option>
+        <option value="4">Aug 8</option>
+        <option value="5">Aug 1</option>
+        <option value="6">Jul 25</option>
+        <option value="7">Jul 18</option>
+        <option value="8">Jul 11</option>
+        <option value="9">Jul 4</option>
+        <option value="10">Jun 27</option>
+        <option value="11">Jun 20</option>
+        <option value="12">Jun 13</option>
       </select>
     </div>
   </div>
@@ -286,369 +290,7 @@
           <th style="width: 45px;"><div class="week-header">Jun 13</div></th>
         </tr>
       </thead>
-      <tbody>
-        <!-- SALES -->
-        <tr><td colspan="16" class="dept-row dept-sales">Sales — OPEN</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Connections Last Week</td>
-          <td class="goal-cell">450</td>
-          <td class="data-cell current-week green">1,274</td>
-          <td class="data-cell green">1,229</td>
-          <td class="data-cell red">1,613</td>
-          <td class="data-cell red">28,420</td>
-          <td class="data-cell green">679</td>
-          <td class="data-cell green">659</td>
-          <td class="data-cell green">662</td>
-          <td class="data-cell green">743</td>
-          <td class="data-cell green">703</td>
-          <td class="data-cell green">454</td>
-          <td class="data-cell green">564</td>
-          <td class="data-cell green">687</td>
-          <td class="data-cell green">646</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">CGOTBA Discovery Calls</td>
-          <td class="goal-cell">10</td>
-          <td class="data-cell current-week red">2</td>
-          <td class="data-cell red">5</td>
-          <td class="data-cell red">4</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">6</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">0</td>
-          <td class="data-cell red">0</td>
-          <td class="data-cell red">0</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell red">1</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Leads Qualified</td>
-          <td class="goal-cell">20</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Down Accounts Not Contacted</td>
-          <td class="goal-cell">0%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell yellow">47.55%</td>
-          <td class="data-cell yellow">47.55%</td>
-          <td class="data-cell yellow">47.78%</td>
-          <td class="data-cell yellow">47.44%</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">47.71%</td>
-          <td class="data-cell yellow">47.55%</td>
-          <td class="data-cell yellow">44.34%</td>
-          <td class="data-cell yellow">42.94%</td>
-          <td class="data-cell yellow">41.87%</td>
-          <td class="data-cell yellow">38.09%</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- MARKETING -->
-        <tr><td colspan="16" class="dept-row dept-marketing">Marketing — Steph</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Leads Generated</td>
-          <td class="goal-cell">8</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">12</td>
-          <td class="data-cell green">25</td>
-          <td class="data-cell red">2</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell green">23</td>
-          <td class="data-cell green">8</td>
-          <td class="data-cell green">9</td>
-          <td class="data-cell yellow">12</td>
-          <td class="data-cell green">43</td>
-          <td class="data-cell yellow">11</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Click-Through Rate</td>
-          <td class="goal-cell">2%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">3.83%</td>
-          <td class="data-cell red">7.83%</td>
-          <td class="data-cell red">5.14%</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell red">5.13%</td>
-          <td class="data-cell red">5.18%</td>
-          <td class="data-cell red">7.04%</td>
-          <td class="data-cell red">4.20%</td>
-          <td class="data-cell red">4.86%</td>
-          <td class="data-cell red">5.83%</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Website Sessions</td>
-          <td class="goal-cell">2,500</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">2,973</td>
-          <td class="data-cell yellow">2,996</td>
-          <td class="data-cell yellow">3,000</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">3,080</td>
-          <td class="data-cell yellow">3,138</td>
-          <td class="data-cell yellow">3,257</td>
-          <td class="data-cell yellow">3,180</td>
-          <td class="data-cell yellow">3,086</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">NPS Score</td>
-          <td class="goal-cell">75</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- SERVICES -->
-        <tr><td colspan="16" class="dept-row dept-services">Services — Megan</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Merchandise Project Avg Hours</td>
-          <td class="goal-cell">4</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Onsite Feedback (L365)</td>
-          <td class="goal-cell">25.5</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Cranes & Merchandisers Avg Hours</td>
-          <td class="goal-cell">4</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Refresh Time Tracking Hours</td>
-          <td class="goal-cell">8</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- PRODUCT -->
-        <tr><td colspan="16" class="dept-row dept-product">Product — Anthony</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Package Design Update %</td>
-          <td class="goal-cell">50%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Product Design Update %</td>
-          <td class="goal-cell">80%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Top 200 Out of Stock</td>
-          <td class="goal-cell">0</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Top 200 At-Risk No-PO</td>
-          <td class="goal-cell">0</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- PEOPLE OPERATIONS -->
-        <tr><td colspan="16" class="dept-row dept-people">People Operations — Tanya</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">eNPS This Quarter</td>
-          <td class="goal-cell">50</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- TECHNOLOGY -->
-        <tr><td colspan="16" class="dept-row dept-tech">Technology — Matt</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Ticket Response Rate %</td>
-          <td class="goal-cell">100%</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell green">100</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">90</td>
-          <td class="data-cell yellow">95</td>
-          <td class="data-cell yellow">90</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell yellow">90</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
-
-        <!-- OPERATIONS -->
-        <tr><td colspan="16" class="dept-row dept-ops">Operations</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">19K Order Tracker (YoY)</td>
-          <td class="goal-cell">19,000</td>
-          <td class="data-cell current-week empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-          <td class="data-cell empty">—</td>
-        </tr>
+      <tbody id="table-body">
       </tbody>
     </table>
   </div>
@@ -669,14 +311,172 @@
   </div>
 
   <div class="footer">
-    <p>Next sync: Monday 7 AM ET | Auto-populated from Salesforce</p>
-    <p style="margin-top: 1rem;">Print-friendly • Try <kbd>Cmd+P</kbd> or <kbd>Ctrl+P</kbd> for PDF</p>
+    <p>Auto-synced every Monday 7 AM ET from Salesforce | Print-friendly (Cmd/Ctrl+P)</p>
   </div>
 
   <script>
+    const SCORECARD_DATA = {
+      weeks: [
+        { date_label: "Sep 5", sales_connections: [1274,1229,1613,28420,679,659,662,743,703,454,564,687,646], cgotba: [2,5,4,2,6,2,2,2,0,0,0,2,1], down_accounts: [null,47.55,47.55,47.78,47.44,null,47.71,47.55,44.34,42.94,41.87,38.09,null], leads_gen: [null,null,12,25,2,null,23,8,9,12,43,11,null], ctr: [null,null,3.83,7.83,5.14,null,5.13,5.18,7.04,4.20,4.86,5.83,null], web_sessions: [null,null,2973,2996,3000,null,3080,3138,3257,3180,3086,null,null], ticket_resp: [null,100,100,100,100,null,90,95,90,null,90,null,null] },
+        { date_label: "Aug 29", sales_connections: [1229,1613,28420,679,659,662,743,703,454,564,687,646,null], cgotba: [5,4,2,6,2,2,2,0,0,0,2,1,null], down_accounts: [47.55,47.55,47.78,47.44,null,47.71,47.55,44.34,42.94,41.87,38.09,null,null], leads_gen: [null,12,25,2,null,23,8,9,12,43,11,null,null], ctr: [null,3.83,7.83,5.14,null,5.13,5.18,7.04,4.20,4.86,5.83,null,null], web_sessions: [null,2973,2996,3000,null,3080,3138,3257,3180,3086,null,null,null], ticket_resp: [100,100,100,100,null,90,95,90,null,90,null,null,null] }
+      ]
+    };
+
+    function getStatus(actual, goal) {
+      if (actual === null) return "empty";
+      if (goal === 0) return "empty"; // Inverse metrics not shown
+      const pct = (actual / goal) * 100;
+      if (pct >= 90) return "green";
+      if (pct >= 70) return "yellow";
+      return "red";
+    }
+
+    function formatValue(val) {
+      if (val === null) return "—";
+      if (typeof val === "number" && val > 100) return val.toLocaleString();
+      return val.toString();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById("table-body");
+      const html = `
+        <tr><td colspan="16" class="dept-row dept-sales">Sales — OPEN</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Connections Last Week</td>
+          <td class="goal-cell">450</td>
+          ${SCORECARD_DATA.weeks[0].sales_connections.map((v, i) => `<td class="data-cell ${getStatus(v, 450)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">CGOTBA Discovery Calls</td>
+          <td class="goal-cell">10</td>
+          ${SCORECARD_DATA.weeks[0].cgotba.map((v, i) => `<td class="data-cell ${getStatus(v, 10)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Leads Qualified</td>
+          <td class="goal-cell">20</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Down Accounts Not Contacted</td>
+          <td class="goal-cell">0%</td>
+          ${SCORECARD_DATA.weeks[0].down_accounts.map((v, i) => `<td class="data-cell ${getStatus(v, 100)} ${i===0?'current-week':''}">${v===null?'—':v+'%'}</td>`).join('')}
+        </tr>
+
+        <tr><td colspan="16" class="dept-row dept-marketing">Marketing — Steph</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Leads Generated</td>
+          <td class="goal-cell">8</td>
+          ${SCORECARD_DATA.weeks[0].leads_gen.map((v, i) => `<td class="data-cell ${getStatus(v, 8)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Click-Through Rate</td>
+          <td class="goal-cell">2%</td>
+          ${SCORECARD_DATA.weeks[0].ctr.map((v, i) => `<td class="data-cell ${getStatus(v, 2)} ${i===0?'current-week':''}">${v===null?'—':v+'%'}</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Website Sessions</td>
+          <td class="goal-cell">2,500</td>
+          ${SCORECARD_DATA.weeks[0].web_sessions.map((v, i) => `<td class="data-cell ${getStatus(v, 2500)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">NPS Score</td>
+          <td class="goal-cell">75</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+
+        <tr><td colspan="16" class="dept-row dept-services">Services — Megan</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Merchandise Project Avg Hours</td>
+          <td class="goal-cell">4</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Onsite Feedback (L365)</td>
+          <td class="goal-cell">25.5</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Cranes & Merchandisers Avg Hours</td>
+          <td class="goal-cell">4</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Refresh Time Tracking Hours</td>
+          <td class="goal-cell">8</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+
+        <tr><td colspan="16" class="dept-row dept-product">Product — Anthony</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Package Design Update %</td>
+          <td class="goal-cell">50%</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Product Design Update %</td>
+          <td class="goal-cell">80%</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Top 200 Out of Stock</td>
+          <td class="goal-cell">0</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Top 200 At-Risk No-PO</td>
+          <td class="goal-cell">0</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+
+        <tr><td colspan="16" class="dept-row dept-people">People Operations — Tanya</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">eNPS This Quarter</td>
+          <td class="goal-cell">50</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+
+        <tr><td colspan="16" class="dept-row dept-tech">Technology — Matt</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">Ticket Response Rate %</td>
+          <td class="goal-cell">100%</td>
+          ${SCORECARD_DATA.weeks[0].ticket_resp.map((v, i) => `<td class="data-cell ${getStatus(v, 100)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
+        </tr>
+
+        <tr><td colspan="16" class="dept-row dept-ops">Operations</td></tr>
+        <tr>
+          <td></td>
+          <td class="metric-name">19K Order Tracker (YoY)</td>
+          <td class="goal-cell">19,000</td>
+          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
+        </tr>
+      `;
+      tbody.innerHTML = html;
+    }
+
     document.getElementById('week-select').addEventListener('change', (e) => {
-      document.getElementById('current-week').textContent = e.target.options[e.target.selectedIndex].text;
+      const weekIdx = parseInt(e.target.value);
+      document.getElementById('current-week').textContent = e.target.options[e.target.selectedIndex].text.split(' (')[0];
     });
+
+    renderTable();
   </script>
 </body>
 </html>
