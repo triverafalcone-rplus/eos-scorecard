@@ -32,10 +32,7 @@
       padding: 2rem;
     }
     
-    .container {
-      max-width: 100%;
-      margin: 0 auto;
-    }
+    .container { max-width: 100%; margin: 0 auto; }
     
     .header {
       background: var(--bg-white);
@@ -48,86 +45,22 @@
       align-items: center;
     }
     
-    .header h1 {
-      font-size: 28px;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
+    .header h1 { font-size: 28px; font-weight: 600; margin-bottom: 0.5rem; }
+    .header p { font-size: 13px; color: var(--text-light); }
     
-    .header p {
-      font-size: 13px;
-      color: var(--text-light);
-    }
+    .week-selector { display: flex; align-items: center; gap: 1rem; }
+    .week-selector label { font-size: 12px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .week-selector select { padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; cursor: pointer; }
+    .week-selector select:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1); }
     
-    .week-selector {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    .scorecard-wrapper { background: var(--bg-white); border: 1px solid var(--border); border-radius: 8px; overflow: auto; }
     
-    .week-selector label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+    table { width: 100%; border-collapse: collapse; font-size: 12px; }
+    th, td { padding: 0.75rem 0.5rem; text-align: left; border-right: 1px solid var(--border); }
+    th { font-weight: 600; background: var(--bg-light); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3px; font-size: 11px; white-space: nowrap; }
+    td { color: var(--text-dark); border-bottom: 1px solid var(--border); }
     
-    .week-selector select {
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      font-size: 13px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    
-    .week-selector select:focus {
-      outline: none;
-      border-color: var(--blue);
-      box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
-    }
-    
-    .scorecard-wrapper {
-      background: var(--bg-white);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: auto;
-    }
-    
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-    }
-    
-    th, td {
-      padding: 0.75rem 0.5rem;
-      text-align: left;
-      border-right: 1px solid var(--border);
-    }
-    
-    th {
-      font-weight: 600;
-      background: var(--bg-light);
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-      font-size: 11px;
-      white-space: nowrap;
-    }
-    
-    td {
-      color: var(--text-dark);
-      border-bottom: 1px solid var(--border);
-    }
-    
-    .dept-row {
-      font-weight: 600;
-      color: white;
-      height: 40px;
-    }
-    
+    .dept-row { font-weight: 600; color: white; height: 40px; }
     .dept-sales { background: var(--green); }
     .dept-marketing { background: var(--purple); }
     .dept-services { background: var(--teal); }
@@ -135,108 +68,23 @@
     .dept-people { background: var(--coral); }
     .dept-tech { background: var(--blue); }
     .dept-ops { background: #666; }
+    .dept-row td { color: white; border-bottom: none; }
     
-    .dept-row td {
-      color: white;
-      border-bottom: none;
-    }
+    .metric-name { font-weight: 500; color: var(--text-dark); min-width: 200px; padding-left: 1rem; }
+    .goal-cell { text-align: center; font-weight: 500; min-width: 50px; color: var(--text-muted); }
+    .data-cell { text-align: center; padding: 0.5rem; min-width: 45px; font-weight: 600; font-size: 13px; }
+    .data-cell.green { background: #ecfdf5; color: var(--green-status); }
+    .data-cell.yellow { background: #fffbeb; color: var(--yellow-status); }
+    .data-cell.red { background: #fef2f2; color: var(--red-status); }
+    .data-cell.empty { color: var(--text-light); font-style: italic; font-weight: 400; }
+    .data-cell.current-week { border-left: 3px solid var(--orange); border-right: 3px solid var(--orange); }
+    .week-header { writing-mode: vertical-rl; text-orientation: mixed; display: flex; align-items: center; justify-content: center; height: 60px; }
     
-    .metric-name {
-      font-weight: 500;
-      color: var(--text-dark);
-      min-width: 200px;
-      padding-left: 1rem;
-    }
-    
-    .goal-cell {
-      text-align: center;
-      font-weight: 500;
-      min-width: 50px;
-      color: var(--text-muted);
-    }
-    
-    .data-cell {
-      text-align: center;
-      padding: 0.5rem;
-      min-width: 45px;
-      font-weight: 600;
-      font-size: 13px;
-    }
-    
-    .data-cell.green {
-      background: #ecfdf5;
-      color: var(--green-status);
-    }
-    
-    .data-cell.yellow {
-      background: #fffbeb;
-      color: var(--yellow-status);
-    }
-    
-    .data-cell.red {
-      background: #fef2f2;
-      color: var(--red-status);
-    }
-    
-    .data-cell.empty {
-      color: var(--text-light);
-      font-style: italic;
-      font-weight: 400;
-    }
-    
-    .data-cell.current-week {
-      border-left: 3px solid var(--orange);
-      border-right: 3px solid var(--orange);
-    }
-    
-    .week-header {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 60px;
-    }
-    
-    .footer {
-      text-align: center;
-      padding: 2rem;
-      color: var(--text-light);
-      font-size: 12px;
-    }
-    
-    .footer a {
-      color: var(--blue);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    
-    .footer a:hover {
-      text-decoration: underline;
-    }
-    
-    .legend {
-      display: flex;
-      gap: 2rem;
-      margin-top: 2rem;
-      padding: 1rem;
-      background: var(--bg-light);
-      border-radius: 6px;
-      font-size: 12px;
-    }
-    
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    
-    .legend-box {
-      width: 20px;
-      height: 20px;
-      border-radius: 3px;
-    }
-    
+    .footer { text-align: center; padding: 2rem; color: var(--text-light); font-size: 12px; }
+    .footer a { color: var(--blue); text-decoration: none; font-weight: 500; }
+    .legend { display: flex; gap: 2rem; margin-top: 2rem; padding: 1rem; background: var(--bg-light); border-radius: 6px; font-size: 12px; }
+    .legend-item { display: flex; align-items: center; gap: 0.5rem; }
+    .legend-box { width: 20px; height: 20px; border-radius: 3px; }
     .legend-green { background: #ecfdf5; border: 1px solid var(--green-status); }
     .legend-yellow { background: #fffbeb; border: 1px solid var(--yellow-status); }
     .legend-red { background: #fef2f2; border: 1px solid var(--red-status); }
@@ -290,24 +138,14 @@
           <th style="width: 45px;"><div class="week-header">Jun 13</div></th>
         </tr>
       </thead>
-      <tbody id="table-body">
-      </tbody>
+      <tbody id="table-body"></tbody>
     </table>
   </div>
 
   <div class="legend">
-    <div class="legend-item">
-      <div class="legend-box legend-green"></div>
-      <span>Green: ≥90% of goal</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-box legend-yellow"></div>
-      <span>Yellow: 70-89% of goal</span>
-    </div>
-    <div class="legend-item">
-      <div class="legend-box legend-red"></div>
-      <span>Red: <70% of goal</span>
-    </div>
+    <div class="legend-item"><div class="legend-box legend-green"></div><span>Green: ≥90% of goal</span></div>
+    <div class="legend-item"><div class="legend-box legend-yellow"></div><span>Yellow: 70-89% of goal</span></div>
+    <div class="legend-item"><div class="legend-box legend-red"></div><span>Red: <70% of goal</span></div>
   </div>
 
   <div class="footer">
@@ -315,16 +153,18 @@
   </div>
 
   <script>
-    const SCORECARD_DATA = {
-      weeks: [
-        { date_label: "Sep 5", sales_connections: [1274,1229,1613,28420,679,659,662,743,703,454,564,687,646], cgotba: [2,5,4,2,6,2,2,2,0,0,0,2,1], down_accounts: [null,47.55,47.55,47.78,47.44,null,47.71,47.55,44.34,42.94,41.87,38.09,null], leads_gen: [null,null,12,25,2,null,23,8,9,12,43,11,null], ctr: [null,null,3.83,7.83,5.14,null,5.13,5.18,7.04,4.20,4.86,5.83,null], web_sessions: [null,null,2973,2996,3000,null,3080,3138,3257,3180,3086,null,null], ticket_resp: [null,100,100,100,100,null,90,95,90,null,90,null,null] },
-        { date_label: "Aug 29", sales_connections: [1229,1613,28420,679,659,662,743,703,454,564,687,646,null], cgotba: [5,4,2,6,2,2,2,0,0,0,2,1,null], down_accounts: [47.55,47.55,47.78,47.44,null,47.71,47.55,44.34,42.94,41.87,38.09,null,null], leads_gen: [null,12,25,2,null,23,8,9,12,43,11,null,null], ctr: [null,3.83,7.83,5.14,null,5.13,5.18,7.04,4.20,4.86,5.83,null,null], web_sessions: [null,2973,2996,3000,null,3080,3138,3257,3180,3086,null,null,null], ticket_resp: [100,100,100,100,null,90,95,90,null,90,null,null,null] }
-      ]
+    const METRICS = {
+      conn: [1274, 1229, 1613, 28420, 679, 659, 662, 743, 703, 454, 564, 687, 646],
+      cgotba: [2, 5, 4, 2, 6, 2, 2, 2, 0, 0, 0, 2, 1],
+      down_accounts: [null, 47.55, 47.55, 47.78, 47.44, null, 47.71, 47.55, 44.34, 42.94, 41.87, 38.09, null],
+      leads_gen: [null, null, 12, 25, 2, null, 23, 8, 9, 12, 43, 11, null],
+      ctr: [null, null, 3.83, 7.83, 5.14, null, 5.13, 5.18, 7.04, 4.20, 4.86, 5.83, null],
+      web_sessions: [null, null, 2973, 2996, 3000, null, 3080, 3138, 3257, 3180, 3086, null, null],
+      ticket_resp: [null, 100, 100, 100, 100, null, 90, 95, 90, null, 90, null, null]
     };
 
     function getStatus(actual, goal) {
       if (actual === null) return "empty";
-      if (goal === 0) return "empty"; // Inverse metrics not shown
       const pct = (actual / goal) * 100;
       if (pct >= 90) return "green";
       if (pct >= 70) return "yellow";
@@ -337,146 +177,61 @@
       return val.toString();
     }
 
-    function renderTable() {
-      const tbody = document.getElementById("table-body");
-      const html = `
-        <tr><td colspan="16" class="dept-row dept-sales">Sales — OPEN</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Connections Last Week</td>
-          <td class="goal-cell">450</td>
-          ${SCORECARD_DATA.weeks[0].sales_connections.map((v, i) => `<td class="data-cell ${getStatus(v, 450)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">CGOTBA Discovery Calls</td>
-          <td class="goal-cell">10</td>
-          ${SCORECARD_DATA.weeks[0].cgotba.map((v, i) => `<td class="data-cell ${getStatus(v, 10)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Leads Qualified</td>
-          <td class="goal-cell">20</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Down Accounts Not Contacted</td>
-          <td class="goal-cell">0%</td>
-          ${SCORECARD_DATA.weeks[0].down_accounts.map((v, i) => `<td class="data-cell ${getStatus(v, 100)} ${i===0?'current-week':''}">${v===null?'—':v+'%'}</td>`).join('')}
-        </tr>
-
-        <tr><td colspan="16" class="dept-row dept-marketing">Marketing — Steph</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Leads Generated</td>
-          <td class="goal-cell">8</td>
-          ${SCORECARD_DATA.weeks[0].leads_gen.map((v, i) => `<td class="data-cell ${getStatus(v, 8)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Click-Through Rate</td>
-          <td class="goal-cell">2%</td>
-          ${SCORECARD_DATA.weeks[0].ctr.map((v, i) => `<td class="data-cell ${getStatus(v, 2)} ${i===0?'current-week':''}">${v===null?'—':v+'%'}</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Website Sessions</td>
-          <td class="goal-cell">2,500</td>
-          ${SCORECARD_DATA.weeks[0].web_sessions.map((v, i) => `<td class="data-cell ${getStatus(v, 2500)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">NPS Score</td>
-          <td class="goal-cell">75</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-
-        <tr><td colspan="16" class="dept-row dept-services">Services — Megan</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Merchandise Project Avg Hours</td>
-          <td class="goal-cell">4</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Onsite Feedback (L365)</td>
-          <td class="goal-cell">25.5</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Cranes & Merchandisers Avg Hours</td>
-          <td class="goal-cell">4</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Refresh Time Tracking Hours</td>
-          <td class="goal-cell">8</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-
-        <tr><td colspan="16" class="dept-row dept-product">Product — Anthony</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Package Design Update %</td>
-          <td class="goal-cell">50%</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Product Design Update %</td>
-          <td class="goal-cell">80%</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Top 200 Out of Stock</td>
-          <td class="goal-cell">0</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Top 200 At-Risk No-PO</td>
-          <td class="goal-cell">0</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-
-        <tr><td colspan="16" class="dept-row dept-people">People Operations — Tanya</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">eNPS This Quarter</td>
-          <td class="goal-cell">50</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-
-        <tr><td colspan="16" class="dept-row dept-tech">Technology — Matt</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">Ticket Response Rate %</td>
-          <td class="goal-cell">100%</td>
-          ${SCORECARD_DATA.weeks[0].ticket_resp.map((v, i) => `<td class="data-cell ${getStatus(v, 100)} ${i===0?'current-week':''}">${formatValue(v)}</td>`).join('')}
-        </tr>
-
-        <tr><td colspan="16" class="dept-row dept-ops">Operations</td></tr>
-        <tr>
-          <td></td>
-          <td class="metric-name">19K Order Tracker (YoY)</td>
-          <td class="goal-cell">19,000</td>
-          ${[null,null,null,null,null,null,null,null,null,null,null,null,null].map((v, i) => `<td class="data-cell empty ${i===0?'current-week':''}">—</td>`).join('')}
-        </tr>
-      `;
-      tbody.innerHTML = html;
+    function renderRow(name, goal, data, goalNum) {
+      return `<tr>
+        <td></td>
+        <td class="metric-name">${name}</td>
+        <td class="goal-cell">${goal}</td>
+        ${data.map((v, i) => {
+          const status = getStatus(v, goalNum);
+          const isCurrent = i === 0 ? 'current-week' : '';
+          const display = v === null ? '—' : (typeof v === 'number' && v > 100 ? v.toLocaleString() : v.toString());
+          return `<td class="data-cell ${status} ${isCurrent}">${display}</td>`;
+        }).join('')}
+      </tr>`;
     }
+
+    const html = `
+      <tr><td colspan="16" class="dept-row dept-sales">Sales — OPEN</td></tr>
+      ${renderRow('Connections Last Week', '450', METRICS.conn, 450)}
+      ${renderRow('CGOTBA Discovery Calls', '10', METRICS.cgotba, 10)}
+      ${renderRow('Leads Qualified', '20', [null, null, null, null, null, null, null, null, null, null, null, null, null], 20)}
+      ${renderRow('Down Accounts Not Contacted %', '0%', METRICS.down_accounts, 100)}
+
+      <tr><td colspan="16" class="dept-row dept-marketing">Marketing — Steph</td></tr>
+      ${renderRow('Leads Generated', '8', METRICS.leads_gen, 8)}
+      ${renderRow('Click-Through Rate %', '2%', METRICS.ctr, 2)}
+      ${renderRow('Website Sessions', '2,500', METRICS.web_sessions, 2500)}
+      ${renderRow('NPS Score', '75', [null, null, null, null, null, null, null, null, null, null, null, null, null], 75)}
+
+      <tr><td colspan="16" class="dept-row dept-services">Services — Megan</td></tr>
+      ${renderRow('Merchandise Project Avg Hours', '4', [null, null, null, null, null, null, null, null, null, null, null, null, null], 4)}
+      ${renderRow('Onsite Feedback (L365)', '25.5', [null, null, null, null, null, null, null, null, null, null, null, null, null], 25.5)}
+      ${renderRow('Cranes & Merchandisers Avg Hours', '4', [null, null, null, null, null, null, null, null, null, null, null, null, null], 4)}
+      ${renderRow('Refresh Time Tracking Hours', '8', [null, null, null, null, null, null, null, null, null, null, null, null, null], 8)}
+
+      <tr><td colspan="16" class="dept-row dept-product">Product — Anthony</td></tr>
+      ${renderRow('Package Design Update %', '50%', [null, null, null, null, null, null, null, null, null, null, null, null, null], 50)}
+      ${renderRow('Product Design Update %', '80%', [null, null, null, null, null, null, null, null, null, null, null, null, null], 80)}
+      ${renderRow('Top 200 Out of Stock', '0', [null, null, null, null, null, null, null, null, null, null, null, null, null], 1)}
+      ${renderRow('Top 200 At-Risk No-PO', '0', [null, null, null, null, null, null, null, null, null, null, null, null, null], 1)}
+
+      <tr><td colspan="16" class="dept-row dept-people">People Operations — Tanya</td></tr>
+      ${renderRow('eNPS This Quarter', '50', [null, null, null, null, null, null, null, null, null, null, null, null, null], 50)}
+
+      <tr><td colspan="16" class="dept-row dept-tech">Technology — Matt</td></tr>
+      ${renderRow('Ticket Response Rate %', '100%', METRICS.ticket_resp, 100)}
+
+      <tr><td colspan="16" class="dept-row dept-ops">Operations</td></tr>
+      ${renderRow('19K Order Tracker (YoY)', '19,000', [null, null, null, null, null, null, null, null, null, null, null, null, null], 19000)}
+    `;
+
+    document.getElementById('table-body').innerHTML = html;
 
     document.getElementById('week-select').addEventListener('change', (e) => {
       const weekIdx = parseInt(e.target.value);
       document.getElementById('current-week').textContent = e.target.options[e.target.selectedIndex].text.split(' (')[0];
     });
-
-    renderTable();
   </script>
 </body>
 </html>
