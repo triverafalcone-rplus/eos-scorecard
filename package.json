@@ -1,0 +1,18 @@
+{
+  "name": "rp-eos-scorecard",
+  "version": "1.0.0",
+  "description": "Redemption Plus EOS-aligned scorecard with auto-syncing from Salesforce",
+  "main": "sync-scorecard.js",
+  "scripts": {
+    "sync": "node sync-scorecard.js",
+    "dev": "node sync-scorecard.js --debug"
+  },
+  "keywords": [
+    "redemption-plus",
+    "eos",
+    "scorecard",
+    "salesforce"
+  ],
+  "author": "Redemption Plus",
+  "license": "MIT"
+}

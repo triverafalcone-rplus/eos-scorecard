@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "current_week": "2026-09-05",
+    "current_week_sales_seat": "OPEN",
+    "note": "21 metrics (19 tracked + 2 placeholders) across 5 departments. CGOTBA uses Account.CGOTBA_Date__c."
+  },
+  "weeks": [
+    {
+      "week_ending": "2026-09-05",
+      "date_label": "Sep 5",
+      "Sales": {
+        "Connections Last Week": { "actual": 1274, "goal": 450 },
+        "Discovery Calls CGOTBA": { "actual": 2, "goal": 10 },
+        "Leads Qualified": { "actual": null, "goal": 20 },
+        "Down Accounts Not Contacted": { "actual": null, "goal": 0 }
+      },
+      "Marketing": {
+        "Leads Generated": { "actual": null, "goal": 8 },
+        "Click Through Rate": { "actual": null, "goal": 2 },
+        "Website Sessions": { "actual": null, "goal": 2500 },
+        "NPS Score": { "actual": null, "goal": 75 }
+      },
+      "Services": {
+        "Merchandise Project Avg Hours": { "actual": null, "goal": 4 },
+        "Onsite Feedback L365": { "actual": null, "goal": 25.5 },
+        "Cranes & Merchandisers Avg Hours": { "actual": null, "goal": 4 },
+        "Refresh Time Tracking Hours": { "actual": null, "goal": 8 }
+      },
+      "Product": {
+        "Package Design Update Penetration": { "actual": null, "goal": 50 },
+        "Product Design Update Penetration": { "actual": null, "goal": 80 },
+        "Top 200 OOS": { "actual": null, "goal": 0 },
+        "Top 200 At-Risk No-PO": { "actual": null, "goal": 0 }
+      },
+      "Operations": {
+        "Ticket Response Rate": { "actual": null, "goal": 100 },
+        "eNPS This Quarter": { "actual": null, "goal": 50 },
+        "19K Order Tracker YoY": { "actual": null, "goal": 19000 }
+      }
+    },
+    {
+      "week_ending": "2026-08-29",
+      "date_label": "Aug 29",
+      "Sales": {
+        "Connections Last Week": { "actual": 1229, "goal": 450 },
+        "Discovery Calls CGOTBA": { "actual": 5, "goal": 10 },
+        "Leads Qualified": { "actual": null, "goal": 20 },
+        "Down Accounts Not Contacted": { "actual": 47.55, "goal": 0 }
+      },
+      "Marketing": {
+        "Leads Generated": { "actual": null, "goal": 8 },
+        "Click Through Rate": { "actual": null, "goal": 2 },
+        "Website Sessions": { "actual": null, "goal": 2500 },
+        "NPS Score": { "actual": null, "goal": 75 }
+      },
+      "Services": {
+        "Merchandise Project Avg Hours": { "actual": null, "goal": 4 },
+        "Onsite Feedback L365": { "actual": null, "goal": 25.5 },
+        "Cranes & Merchandisers Avg Hours": { "actual": null, "goal": 4 },
+        "Refresh Time Tracking Hours": { "actual": null, "goal": 8 }
+      },
+      "Product": {
+        "Package Design Update Penetration": { "actual": null, "goal": 50 },
+        "Product Design Update Penetration": { "actual": null, "goal": 80 },
+        "Top 200 OOS": { "actual": null, "goal": 0 },
+        "Top 200 At-Risk No-PO": { "actual": null, "goal": 0 }
+      },
+      "Operations": {
+        "Ticket Response Rate": { "actual": 100, "goal": 100 },
+        "eNPS This Quarter": { "actual": null, "goal": 50 },
+        "19K Order Tracker YoY": { "actual": null, "goal": 19000 }
+      }
+    }
+  ]
+}
